@@ -1,7 +1,53 @@
 * {
-    
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: #1b1f3a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(0, 143, 159);
+    min-width: 100%;
+}
+
+.logo-image {
+    padding: 10px 0 10px 10px;
+    color: white;
+}
+
+.player-score {
+    justify-content: center;
+    color: white;
+    padding: 25px;
+}
+
+#btc {
+    max-width: 50px;
+    max-height: 50px;
+    padding-right: 10px;
+}
+
+.gameBoard-overlay {
+    min-height: 100vh;
+    
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background: lightgrey;
+    padding: 35px;
+    min-width: 100%;
+
 }
