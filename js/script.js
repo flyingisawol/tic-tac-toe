@@ -26,6 +26,10 @@ board.addEventListener('click', (event) => {
         // console.log(num);
         p1.push(num)
         // console.log(p1);
+        for (i = 0; i < p1.length; i++) {
+            if (p1.includes(i) + 2 && 3) // fix this.
+            console.log(p1);
+        }
     } else {
         event.target.textContent = 'O'
         currentPlayer = 'X'
@@ -34,15 +38,15 @@ board.addEventListener('click', (event) => {
         // console.log(num);
         p2.push(num)
         // console.log(p2);
+        for (i = 0; i < p1.length; i++) {
+            p2.includes(i)
+            console.log(p2);
+        }
     } 
 })
 
 // WHO WINS ?
 
-for (i = 0; i < p1.length; i++) {
-    console.log(p1);
-
-}
 
 
 // hyperBitcoinization.addEventListener('click', (event) => {

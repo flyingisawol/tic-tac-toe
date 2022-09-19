@@ -20,7 +20,7 @@ To do:
 - update the players score
 - build board as an array when each element is selected
 - add style when user hovers over spare. shade background color.
-- 
+- remove borders in css to relflect hashtag style.
 
 Winning combinations
 123
