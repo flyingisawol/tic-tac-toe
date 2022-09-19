@@ -37,17 +37,29 @@ header {
     padding-right: 10px;
 }
 
-.gameBoard-overlay {
-    min-height: 100vh;
-    
+main {
+    display: flex;
+    margin: 45px;
+    padding: 45px;
+    color: white;
+}
 
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.square {
+    border: 3px solid rgb(249, 126, 17);
+    padding: 45px;
 }
 
 footer {
     display: flex;
     justify-content: center;
     background: lightgrey;
-    padding: 35px;
+    padding: 45px;
     min-width: 100%;
-
 }
