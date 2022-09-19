@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
     background: #1b1f3a;
 }
 
@@ -53,7 +53,10 @@ main {
 
 .square {
     border: 3px solid rgb(249, 126, 17);
-    padding: 45px;
+    font-size: 48px;
+    padding: 25px;
+    min-height: 55px;
+    min-width: 55px;
 }
 
 footer {
@@ -62,4 +65,6 @@ footer {
     background: lightgrey;
     padding: 45px;
     min-width: 100%;
+    font-size: 14px;
+
 }
