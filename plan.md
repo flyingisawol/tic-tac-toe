@@ -22,11 +22,5 @@ To do:
 - add style when user hovers over spare. shade background color.
 - remove borders in css to relflect hashtag style.
 
-Winning combinations
-123
-159
-357
-147
-369
-789
+// needs to check array for number combinations in any sequence
 
