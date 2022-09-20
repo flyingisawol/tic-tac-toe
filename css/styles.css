@@ -56,24 +56,32 @@ header {
 
 main {
     display: flex;
-    margin: 45px;
-    padding: 45px;
+    justify-content: center;
+    align-content: center;
+    min-height: 60vh;
     color: white;
+    padding-top: 60px;
 }
 
 .board {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    padding-top: 80px;
+    grid-gap: 10px;
 }
 
 .square {
     border: 3px solid rgb(249, 126, 17);
-    font-size: 58px;
+    font-size: 105px;
     padding: 25px;
-    min-height: 55px;
-    min-width: 55px;
+    min-height: 125px;
+    min-width: 125px;
     text-align: center;
+}
+
+.square:hover {
+    background: rgb(255, 255, 255, .15)
 }
 
 .square:first-child  {
@@ -106,7 +114,6 @@ main {
     border-right: none;
 }
 
-
 .square:nth-child(3n + 1)  {
     border-left: none;
 }
@@ -138,9 +145,9 @@ main {
     padding: 10px;
 }
 
-/* // change restart-button opacity to 1 to show button
+/* // change restart-button opacity to 1 to show button */
 
-#restart-button:hover {
+/* #restart-button:hover {
     background: black;
     border: 2px solid hotpink;
     opacity: 1;

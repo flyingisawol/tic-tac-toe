@@ -38,9 +38,9 @@ board.addEventListener('click', (event) => {
         // console.log(p1);
         for (i = 0; i < p1.length; i++) {
             p1.includes(i) // fix this.
-            console.log(p1);   
-            checkForWinner()
         }
+        checkForWinner()
+        // console.log('player 1 array ',p1);   
     } else {
         event.target.textContent = 'O'
         currentPlayer = 'X'
@@ -51,18 +51,25 @@ board.addEventListener('click', (event) => {
         // console.log(p2);
         for (i = 0; i < p1.length; i++) {
             p2.includes(i)
-            console.log(p2);
-            checkForWinner()
         }
+        checkForWinner()
+        // console.log('player 2 array ', p2);
     } 
 })
 
 // WHO WINS ?
 const checkForWinner = () => {
-    if (p1 === winningCombinations) {
-        console.log('winner');
-    }
+    winningCombinations.forEach(function(subArray) {
+        if (subArray.every(function(e) {
+            return p1.includes(e)
+        })) {  
+            console.log('winner');
+        } else {
+            console.log('x')
+        }
+    })
 }
+
 
 // hyperBitcoinization.addEventListener('click', (event) => {
 //     if (event.target) {
