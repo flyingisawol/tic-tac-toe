@@ -4,6 +4,7 @@
 
 let currentPlayer = 'X'
 const board = document.querySelector('.board')
+const squares = document.querySelectorAll('.square')
 const winningText = document.querySelector('.winning-text')
 const winningMessageOverlay = document.querySelector('.winning-message-overlay')
 const mainContent = document.querySelector('main')
@@ -83,11 +84,12 @@ const endGame = (draw) => {
     if (draw) {
         initGame()
     } else {
-        winningText.innerHTML = "fucking YES"
+        winningText.innerHTML = "You Win!!"
 
         winningMessageOverlay.style.zIndex = 1
         winningMessageOverlay.style.opacity = .8;
         winningText.style.zIndex = 2;
+        winningText.style.opacity = 1;
         restartButton.style.opacity = 1;
         restartButton.style.zIndex = 2;
         endGameOverlay.style.zIndex = 0;
@@ -96,16 +98,22 @@ const endGame = (draw) => {
 
 // Function to initialise game 
 const initGame = () => {
+}
     restartButton.addEventListener('click', (event) => {
+        squares.textContent = ''
         winningMessageOverlay.style.zIndex = -1;
         winningMessageOverlay.style.opacity = 0;
         winningText.style.zIndex = -1;
+        winningText.style.opacity = 0;
         restartButton.style.opacity = 0;
         restartButton.style.zIndex = -1;
         endGameOverlay.style.zIndex = -1;
     }) 
-}
 
+// Keep Score
+const score = () => {
+
+}
 
 // so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.
 
