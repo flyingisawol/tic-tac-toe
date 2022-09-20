@@ -58,30 +58,32 @@ main {
     display: flex;
     justify-content: center;
     align-content: center;
-    min-height: 60vh;
     color: white;
-    padding-top: 60px;
 }
 
 .board {
     display: grid;
+    min-height: 60vh;
+    min-width: 60vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     padding-top: 80px;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
 }
 
 .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid rgb(249, 126, 17);
     font-size: 105px;
     padding: 25px;
     min-height: 125px;
     min-width: 125px;
-    text-align: center;
 }
 
 .square:hover {
-    background: rgb(255, 255, 255, .15)
+    background: rgb(255, 255, 255, .)
 }
 
 .square:first-child  {
@@ -122,8 +124,9 @@ main {
 //Winning Screen
 //================================================== */
 
-/* .winning-message {
+.end-game {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -131,23 +134,53 @@ main {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgb(0, 0, 0, .75)
-} */
+    z-index: -1;
+}
+
+.winning-message-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    opacity: 0;
+    z-index: -1;
+}
+
+.winning-text {
+    color: black;
+    background: yellow;
+    border: 4px solid white;
+    border-radius: 20px;
+    font-size: 48px;
+    font-weight: 700;
+    opacity: 0;
+    margin: 10px;
+    padding: 20px;
+    z-index: -1;
+
+}
 
 #restart-button {
     background: black;
     border: none;
-    opacity: 0; 
     color: white;
     font-size: 36px;;
     border: 1px solid white;
     border-radius: 15px;
     padding: 10px;
+    opacity: 0; 
+    margin: 5px;
 }
 
 /* // change restart-button opacity to 1 to show button */
 
-/* #restart-button:hover {
+#restart-button:hover {
     background: black;
     border: 2px solid hotpink;
     opacity: 1;
@@ -156,7 +189,8 @@ main {
     font-weight: 900;
     border-radius: 15px;
     padding: 10px;
-} */
+}
+
 
 /* //==================================================
 //Footer
