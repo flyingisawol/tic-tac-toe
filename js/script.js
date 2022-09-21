@@ -50,14 +50,14 @@ board.addEventListener('click', (event) => {
         currentPlayer = 'O'
         p1.push(num)
         arr.push(num)
-        console.log(arr);
+        // console.log(arr);
         checkForWinner()
     } else if (currentPlayer !== 'X') {
         event.target.textContent = 'O'
         currentPlayer = 'X'
         p2.push(num)
         arr.push(num)
-        console.log(arr);
+        // console.log(arr);
         checkForWinner()
     } 
 })
@@ -69,18 +69,23 @@ const checkForWinner = () => {
             drawCheck()
             return p1.includes(e)
         })) {  
-            // console.log(`X's Win`);
             score()
             endGame()
         } else if (subArray.every(function(e) {
             return p2.includes(e)
             })) {
-                // console.log(`O's Win`);
                 score()
                 endGame()
         } 
     })
 }
+
+// CHECK FOR A DRAW
+const drawCheck = () => {
+     if (arr.length > 8) {
+        endGame()
+     }
+    }
 
 // END GAME. ANNOUNCE RESULT
 const endGame = (draw) => {
@@ -101,14 +106,24 @@ const endGame = (draw) => {
 
 // Function to initialise game 
 const initGame = () => {
+    replaySound.play()
+    winningMessageOverlay.style.zIndex = -1;
+    winningMessageOverlay.style.opacity = 0;
+    winningText.style.zIndex = -1;
+    winningText.style.opacity = 0;
+    restartButton.style.opacity = 0;
+    restartButton.style.zIndex = -1;
+    endGameOverlay.style.zIndex = -1;
+
+    for (let square of squares) {
+        square.textContent = ''
+    }
+    p1 = []
+    p2 = []
+    currentPlayer = 'X'
+    arr = []
 }
 
-// Check for a Draw
-const drawCheck = () => {
-     if (arr.length > 8) {
-        endGame()
-     }
-    }
 
 
 // Reset Button - Play Again!

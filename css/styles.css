@@ -74,7 +74,6 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     padding-top: 80px;
-    /* grid-gap: 10px; */
 }
 
 .square {
@@ -210,4 +209,114 @@ footer {
     min-width: 100%;
     font-size: 14px;
     margin-top: auto;
+}
+
+/* //==================================================
+//Mobile Optimisation
+//================================================== */
+
+@media (max-width: 600px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        min-height: none;
+        min-width: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        min-height: 75px;
+        padding: 10px;
+        margin-bottom: auto;
+    }
+    
+    .logo-image {
+        padding-left: 10;
+        color: white;
+    }
+    
+    .player1-score {
+        padding: 0;
+        font-size: 10px;
+    }
+    
+    .player2-score {
+        padding: 0;
+        font-size: 10px;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 0 auto;
+    }
+    
+    .board {
+        display: grid;
+        min-height: 0;
+        min-width: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-top: 0;
+    }
+
+    .square {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid rgb(249, 126, 17);
+        font-size: 85px;
+        padding: 0;
+        min-height: none;
+        min-width: none;
+    }
+
+    .end-game {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .winning-message-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        padding: 0px;
+    }
+
+    .winning-text {
+        align-items: center;
+        border: 2px solid rgb(249, 126, 17);
+        font-size: 28px;
+        font-weight: 700;
+        margin: 10px;
+        padding: 20;
+    }
+    
+    #restart-button {
+        font-size: 26px;;
+        border: 1px solid white;
+        padding: 10px;
+    }
+    
+    #restart-button:hover {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .footer {
+        min-width: none;
+    }
 }

@@ -2,6 +2,10 @@ Tic Tac Toe
 
 Description:
 
+The game can be played from here: https://flyingisawol.github.io/tic-tac-toe/
+
+
+
 Table of Contents:
 
 How to Install and Run the Project:

@@ -23,11 +23,11 @@ complete:
 - remove borders in css to relflect hashtag style.done
 - needs to check array for number combinations in any sequence
 - check win if O's. done
+- check if draw
 
 
 Incomplete:
 - loop for clearing board - initGame()
 - update the players score
-- check if draw
 - optimise for mobile.
 - hyperbitcoinization mode (click button. Change O's to img)
