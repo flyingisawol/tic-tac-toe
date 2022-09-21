@@ -29,4 +29,5 @@ Incomplete:
 - loop for clearing board - initGame()
 - update the players score
 - check if draw
+- optimise for mobile.
 - hyperbitcoinization mode (click button. Change O's to img)

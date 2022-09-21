@@ -32,7 +32,13 @@ header {
     color: white;
 }
 
-.player-score {
+.player1-score {
+    justify-content: center;
+    color: white;
+    padding: 15px;
+}
+
+.player2-score {
     justify-content: center;
     color: white;
     padding: 15px;

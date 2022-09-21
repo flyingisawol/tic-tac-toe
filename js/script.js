@@ -2,6 +2,11 @@
 //Game Variables
 //==================================================
 
+let p1 = []
+let p2 = []
+let arr = []
+let p1Score = 0
+let p2Score = 0
 let currentPlayer = 'X'
 const board = document.querySelector('.board')
 const squares = document.querySelectorAll('.square')
@@ -10,16 +15,13 @@ const winningMessageOverlay = document.querySelector('.winning-message-overlay')
 const mainContent = document.querySelector('main')
 const restartButton = document.querySelector('#restart-button')
 const endGameOverlay = document.querySelector('.end-game')
-// const cantTouchThis = new Audio("audio/cant-touch-this.mp3")
-// const replaySound = new Audio("audio/restart1.mp3")
-// const endSound = new Audio("audio/restart.mp3")
+const cantTouchThis = new Audio("audio/cant-touch-this.mp3")
+const replaySound = new Audio("audio/restart1.mp3")
+const endSound = new Audio("audio/restart.mp3")
 const coin = new Audio("audio/coin.mp3")
 
 const hyperBitcoinization = document.querySelector('.btc-mode')
 const bitcoin = document.querySelector('#btc')
-
-let p1 = []
-let p2 = []
 
 const winningCombinations = [
     [1, 2, 3],
@@ -32,7 +34,6 @@ const winningCombinations = [
     [7, 5, 3],
 ]
 
-
 //==================================================
 //Game Functions
 //==================================================
@@ -40,20 +41,23 @@ const winningCombinations = [
 // event listener identifies where grid is clicked
 
 board.addEventListener('click', (event) => {
+    const num = Number(event.target.dataset.index);
     if (event.target.textContent) {
-        // cantTouchThis.play()
+        cantTouchThis.play()
         alert('choose a different square');
     } else if (currentPlayer === 'X') {
         event.target.textContent = 'X'
         currentPlayer = 'O'
-        const num = Number(event.target.dataset.index);
         p1.push(num)
+        arr.push(num)
+        console.log(arr);
         checkForWinner()
-    } else {
+    } else if (currentPlayer !== 'X') {
         event.target.textContent = 'O'
         currentPlayer = 'X'
-        const num = Number(event.target.dataset.index);
         p2.push(num)
+        arr.push(num)
+        console.log(arr);
         checkForWinner()
     } 
 })
@@ -61,20 +65,17 @@ board.addEventListener('click', (event) => {
 // CHECK WHO WINS ?
 const checkForWinner = () => {
     winningCombinations.forEach(function(subArray) {
-        //checks winningCombinations variable forEach subArray contained within
         if (subArray.every(function(e) {
-            //if every element within the subArray
+            drawCheck()
             return p1.includes(e)
-            //add selected square number to array .. ?
         })) {  
-            console.log(`X's Win`);
+            // console.log(`X's Win`);
             score()
             endGame()
-        } else 
-            if (subArray.every(function(e) {
-                return p2.includes(e)
-            })) {  
-                console.log(`O's Win`);
+        } else if (subArray.every(function(e) {
+            return p2.includes(e)
+            })) {
+                // console.log(`O's Win`);
                 score()
                 endGame()
         } 
@@ -86,7 +87,7 @@ const endGame = (draw) => {
     if (draw) {
         initGame()
     } else {
-        // endSound.play()
+        endSound.play()
         winningText.innerHTML = "You Win!!"
         winningMessageOverlay.style.zIndex = 1
         winningMessageOverlay.style.opacity = .8;
@@ -102,10 +103,17 @@ const endGame = (draw) => {
 const initGame = () => {
 }
 
+// Check for a Draw
+const drawCheck = () => {
+     if (arr.length > 8) {
+        endGame()
+     }
+    }
+
 
 // Reset Button - Play Again!
 restartButton.addEventListener('click', () => {
-    // replaySound.play()
+    replaySound.play()
     winningMessageOverlay.style.zIndex = -1;
     winningMessageOverlay.style.opacity = 0;
     winningText.style.zIndex = -1;
@@ -120,11 +128,10 @@ restartButton.addEventListener('click', () => {
     p1 = []
     p2 = []
     currentPlayer = 'X'
+    arr = []
 }) 
 
 // Score Keeper
-let p1Score = 0
-let p2Score = 0
 
 const score = () => {
     if (currentPlayer !== 'X') {
