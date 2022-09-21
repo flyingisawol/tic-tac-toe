@@ -10,7 +10,10 @@ const winningMessageOverlay = document.querySelector('.winning-message-overlay')
 const mainContent = document.querySelector('main')
 const restartButton = document.querySelector('#restart-button')
 const endGameOverlay = document.querySelector('.end-game')
+const cantTouchThis = new Audio("audio/cant-touch-this.mp3")
+
 const hyperBitcoinization = document.querySelector('.btc-mode')
+const bitcoin = "img/bitcoin-logo-png-transparent.png"
 
 let p1 = []
 let p2 = []
@@ -35,35 +38,31 @@ const winningCombinations = [
 
 board.addEventListener('click', (event) => {
     if (event.target.textContent) {
+        cantTouchThis.play()
         alert('choose a different square');
     } else if (currentPlayer === 'X') {
         event.target.textContent = 'X'
         currentPlayer = 'O'
         const num = Number(event.target.dataset.index);
         p1.push(num)
-        for (i = 0; i < p1.length; i++) {
-            p1.includes(i)
-        }
         checkForWinner()
     } else {
         event.target.textContent = 'O'
         currentPlayer = 'X'
         const num = Number(event.target.dataset.index);
         p2.push(num)
-        for (i = 0; i < p1.length; i++) {
-            p2.includes(i)
-        }
         checkForWinner()
     } 
 })
 
-// CHECK TO FIND OUT WHO WINS ?
+// CHECK WHO WINS ?
 const checkForWinner = () => {
     winningCombinations.forEach(function(subArray) {
         //checks winningCombinations variable forEach subArray contained within
         if (subArray.every(function(e) {
             //if every element within the subArray
             return p1.includes(e)
+            //add selected square number to array .. ?
         })) {  
             console.log(`X's Win`);
             score()
@@ -84,7 +83,6 @@ const endGame = (draw) => {
         initGame()
     } else {
         winningText.innerHTML = "You Win!!"
-
         winningMessageOverlay.style.zIndex = 1
         winningMessageOverlay.style.opacity = .8;
         winningText.style.zIndex = 2;
@@ -118,11 +116,17 @@ restartButton.addEventListener('click', () => {
     currentPlayer = 'X'
 }) 
 
-// Keep Score
+// Score Keeper
+// let p1Score = 0
+// let p2Score = 0
+
 const score = () => {
-    let p1Score = 0
-    p1Score++ 
+    if (currentPlayer === 'X') {
+        let p1Score = p1Score++
+        console.log(p1Score);
 }
+}
+
 
 // so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.
 
