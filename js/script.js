@@ -10,10 +10,13 @@ const winningMessageOverlay = document.querySelector('.winning-message-overlay')
 const mainContent = document.querySelector('main')
 const restartButton = document.querySelector('#restart-button')
 const endGameOverlay = document.querySelector('.end-game')
-const cantTouchThis = new Audio("audio/cant-touch-this.mp3")
+// const cantTouchThis = new Audio("audio/cant-touch-this.mp3")
+// const replaySound = new Audio("audio/restart1.mp3")
+// const endSound = new Audio("audio/restart.mp3")
+const coin = new Audio("audio/coin.mp3")
 
 const hyperBitcoinization = document.querySelector('.btc-mode')
-const bitcoin = "img/bitcoin-logo-png-transparent.png"
+const bitcoin = document.querySelector('#btc')
 
 let p1 = []
 let p2 = []
@@ -38,7 +41,7 @@ const winningCombinations = [
 
 board.addEventListener('click', (event) => {
     if (event.target.textContent) {
-        cantTouchThis.play()
+        // cantTouchThis.play()
         alert('choose a different square');
     } else if (currentPlayer === 'X') {
         event.target.textContent = 'X'
@@ -72,8 +75,9 @@ const checkForWinner = () => {
                 return p2.includes(e)
             })) {  
                 console.log(`O's Win`);
+                score()
                 endGame()
-        }
+        } 
     })
 }
 
@@ -82,6 +86,7 @@ const endGame = (draw) => {
     if (draw) {
         initGame()
     } else {
+        // endSound.play()
         winningText.innerHTML = "You Win!!"
         winningMessageOverlay.style.zIndex = 1
         winningMessageOverlay.style.opacity = .8;
@@ -100,6 +105,7 @@ const initGame = () => {
 
 // Reset Button - Play Again!
 restartButton.addEventListener('click', () => {
+    // replaySound.play()
     winningMessageOverlay.style.zIndex = -1;
     winningMessageOverlay.style.opacity = 0;
     winningText.style.zIndex = -1;
@@ -117,15 +123,21 @@ restartButton.addEventListener('click', () => {
 }) 
 
 // Score Keeper
-// let p1Score = 0
-// let p2Score = 0
+let p1Score = 0
+let p2Score = 0
 
 const score = () => {
-    if (currentPlayer === 'X') {
-        let p1Score = p1Score++
-        console.log(p1Score);
+    if (currentPlayer !== 'X') {
+        p1Score = p1Score + 1
+        } else if (currentPlayer === 'X') {
+            p2Score = p2Score + 1
+            console.log(p2Score);
+        }
 }
-}
+
+bitcoin.addEventListener('click', () => {
+    coin.play()
+})
 
 
 // so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.
