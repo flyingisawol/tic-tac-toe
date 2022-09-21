@@ -10,6 +10,7 @@ const winningMessageOverlay = document.querySelector('.winning-message-overlay')
 const mainContent = document.querySelector('main')
 const restartButton = document.querySelector('#restart-button')
 const endGameOverlay = document.querySelector('.end-game')
+const hyperBitcoinization = document.querySelector('.btc-mode')
 
 let p1 = []
 let p2 = []
@@ -25,7 +26,6 @@ const winningCombinations = [
     [7, 5, 3],
 ]
 
-const hyperBitcoinization = document.querySelector('.btc-mode')
 
 //==================================================
 //Game Functions
@@ -39,42 +39,41 @@ board.addEventListener('click', (event) => {
     } else if (currentPlayer === 'X') {
         event.target.textContent = 'X'
         currentPlayer = 'O'
-        // console.log(currentPlayer);
         const num = Number(event.target.dataset.index);
-        // console.log(num);
         p1.push(num)
-        // console.log(p1);
         for (i = 0; i < p1.length; i++) {
-            p1.includes(i) // fix this.
+            p1.includes(i)
         }
         checkForWinner()
-        // console.log('player 1 array ',p1);   
     } else {
         event.target.textContent = 'O'
         currentPlayer = 'X'
-        // console.log(currentPlayer);
         const num = Number(event.target.dataset.index);
-        // console.log(num);
         p2.push(num)
-        // console.log(p2);
         for (i = 0; i < p1.length; i++) {
             p2.includes(i)
         }
         checkForWinner()
-        // console.log('player 2 array ', p2);
     } 
 })
 
 // CHECK TO FIND OUT WHO WINS ?
 const checkForWinner = () => {
     winningCombinations.forEach(function(subArray) {
+        //checks winningCombinations variable forEach subArray contained within
         if (subArray.every(function(e) {
+            //if every element within the subArray
             return p1.includes(e)
         })) {  
-            console.log('winner');
+            console.log(`X's Win`);
+            score()
             endGame()
-        } else {
-            console.log('x')
+        } else 
+            if (subArray.every(function(e) {
+                return p2.includes(e)
+            })) {  
+                console.log(`O's Win`);
+                endGame()
         }
     })
 }
@@ -99,20 +98,30 @@ const endGame = (draw) => {
 // Function to initialise game 
 const initGame = () => {
 }
-    restartButton.addEventListener('click', (event) => {
-        squares.textContent = ''
-        winningMessageOverlay.style.zIndex = -1;
-        winningMessageOverlay.style.opacity = 0;
-        winningText.style.zIndex = -1;
-        winningText.style.opacity = 0;
-        restartButton.style.opacity = 0;
-        restartButton.style.zIndex = -1;
-        endGameOverlay.style.zIndex = -1;
-    }) 
+
+
+// Reset Button - Play Again!
+restartButton.addEventListener('click', () => {
+    winningMessageOverlay.style.zIndex = -1;
+    winningMessageOverlay.style.opacity = 0;
+    winningText.style.zIndex = -1;
+    winningText.style.opacity = 0;
+    restartButton.style.opacity = 0;
+    restartButton.style.zIndex = -1;
+    endGameOverlay.style.zIndex = -1;
+
+    for (let square of squares) {
+        square.textContent = ''
+    }
+    p1 = []
+    p2 = []
+    currentPlayer = 'X'
+}) 
 
 // Keep Score
 const score = () => {
-
+    let p1Score = 0
+    p1Score++ 
 }
 
 // so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.

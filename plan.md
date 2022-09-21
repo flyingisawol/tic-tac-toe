@@ -14,13 +14,19 @@ To do:
 
 - clicking the bitcoin button enables the bitcoin logo instead of O's.
 
-- identify if someone wins.
-- show winner.
-- provide a button to reset the game
+complete:
+- build board as an array when each element is selected. done
+- identify if someone wins. done
+- show winner. done
+- provide a button to reset the game. done
+- add style when user hovers over spare. shade background color.done
+- remove borders in css to relflect hashtag style.done
+- needs to check array for number combinations in any sequence
+- check win if O's. done
+
+
+Incomplete:
+- loop for clearing board - initGame()
 - update the players score
-- build board as an array when each element is selected
-- add style when user hovers over spare. shade background color.
-- remove borders in css to relflect hashtag style.
-
-// needs to check array for number combinations in any sequence
-
+- check if draw
+- hyperbitcoinization mode (click button. Change O's to img)
