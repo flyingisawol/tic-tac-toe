@@ -11,9 +11,7 @@ let currentPlayer = "X";
 const board = document.querySelector(".board");
 const squares = document.querySelectorAll(".square");
 const winningText = document.querySelector(".winning-text");
-const winningMessageOverlay = document.querySelector(
-  ".winning-message-overlay"
-);
+const winningMessageOverlay = document.querySelector(".winning-message-overlay");
 const mainContent = document.querySelector("main");
 const restartButton = document.querySelector("#restart-button");
 const endGameOverlay = document.querySelector(".end-game");
@@ -69,8 +67,7 @@ board.addEventListener("click", (event) => {
 // CHECK WHO WINS ?
 const checkForWinner = () => {
   winningCombinations.forEach(function (subArray) {
-    if (
-      subArray.every(function (e) {
+    if (subArray.every(function (e) {
         drawCheck();
         return p1.includes(e);
       })
@@ -90,16 +87,16 @@ const checkForWinner = () => {
 
 // CHECK FOR A DRAW
 const drawCheck = () => {
-  if (arr.length > 8) {
+  if (arr.length === 9 && winningCombinations !== true) {
     endGame();
   }
 };
 
 // END GAME. ANNOUNCE RESULT
-const endGame = (draw) => {
-  if (arr.length > 8) {
+const endGame = () => {
+  if (arr.length === 9) {
     currentPlayer = `It's a draw!`
-    // endSound.play()
+    endSound.play()
     winningText.innerHTML = `${currentPlayer}`;
     winningMessageOverlay.style.zIndex = 1;
     winningMessageOverlay.style.opacity = 0.8;
@@ -110,7 +107,7 @@ const endGame = (draw) => {
     endGameOverlay.style.zIndex = 0;
   } else if (currentPlayer === "X") {
     currentPlayer = "O";
-    // endSound.play()
+    endSound.play()
     winningText.innerHTML = `${currentPlayer}'s Win!`;
     winningMessageOverlay.style.zIndex = 1;
     winningMessageOverlay.style.opacity = 0.8;
@@ -121,7 +118,7 @@ const endGame = (draw) => {
     endGameOverlay.style.zIndex = 0;
   } else if (currentPlayer === "O") {
     currentPlayer = "X";
-    // endSound.play()
+    endSound.play()
     winningText.innerHTML = `${currentPlayer}'s Win!`;
     winningMessageOverlay.style.zIndex = 1;
     winningMessageOverlay.style.opacity = 0.8;
@@ -131,11 +128,11 @@ const endGame = (draw) => {
     restartButton.style.zIndex = 2;
     endGameOverlay.style.zIndex = 0;
   }
-}
+};
 
 // Function to initialise game
 const initGame = () => {
-  // replaySound.play()
+  replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;
@@ -155,7 +152,7 @@ const initGame = () => {
 
 // Reset Button - Play Again!
 restartButton.addEventListener("click", () => {
-  // replaySound.play()
+  replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;

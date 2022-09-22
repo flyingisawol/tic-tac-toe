@@ -26,10 +26,10 @@ complete:
 - check if draw. done
 - loop for clearing board. done
 - optimise for mobile. done
+- splash screen adjusted for draws. done
 
 
 Incomplete:
 - update the players score
-- splash screen adjusted for draws
 - finalise README
 - hyperbitcoinization mode (click button. Change O's to img)
