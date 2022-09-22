@@ -21,13 +21,15 @@ complete:
 - provide a button to reset the game. done
 - add style when user hovers over spare. shade background color.done
 - remove borders in css to relflect hashtag style.done
-- needs to check array for number combinations in any sequence
+- needs to check array for number combinations in any sequence. done
 - check win if O's. done
-- check if draw
+- check if draw. done
+- loop for clearing board. done
+- optimise for mobile. done
 
 
 Incomplete:
-- loop for clearing board - initGame()
 - update the players score
-- optimise for mobile.
+- splash screen adjusted for draws
+- finalise README
 - hyperbitcoinization mode (click button. Change O's to img)

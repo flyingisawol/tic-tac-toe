@@ -73,7 +73,8 @@ main {
     min-width: 60vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    padding-top: 80px;
+    align-content: center;
+    padding-top: 120px;
 }
 
 .square {
