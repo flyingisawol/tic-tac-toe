@@ -25,6 +25,8 @@ header {
     align-items: center;
     background: rgb(0, 143, 159);
     min-width: 100%;
+    min-height: 100px;
+
 }
 
 .logo-image {

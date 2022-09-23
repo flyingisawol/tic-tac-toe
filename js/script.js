@@ -175,10 +175,13 @@ restartButton.addEventListener("click", () => {
 const score = () => {
   if (currentPlayer !== "X") {
     p1Score = p1Score + 1;
-    // score1.append(p1Score)
+    score1.textContent = "Wins "
+    score1.append(p1Score)
+
   } else if (currentPlayer === "X") {
     p2Score = p2Score + 1;
-    // score1.append(p1Score)
+    score2.textContent = "Wins "
+    score2.append(p2Score)
   }
 };
 

@@ -32,4 +32,6 @@ complete:
 Incomplete:
 - update the players score
 - finalise README
+- mute button added
+- static reset button
 - hyperbitcoinization mode (click button. Change O's to img)

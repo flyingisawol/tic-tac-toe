@@ -2,7 +2,7 @@ Tic Tac Toe
 
 Description:
 
-The game can be played from here: https://flyingisawol.github.io/tic-tac-toe/
+Game available from: https://flyingisawol.github.io/tic-tac-toe/
 
 
 
