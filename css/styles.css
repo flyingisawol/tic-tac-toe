@@ -163,7 +163,7 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     align-content: center;
-    padding: 45px;
+    padding-top: 65px;
 }
 
 .square {
