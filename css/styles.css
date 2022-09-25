@@ -14,6 +14,16 @@ body {
     min-height: 100vh;
 }
 
+.bitcoinization {
+    background: white;
+    background-image: url("/img/IMG_6593.JPG");
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+}
+
 /* //==================================================
 //Header
 //================================================== */
@@ -29,8 +39,9 @@ header {
 }
 
 .logo-image {
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 20px;
     color: white;
+    cursor: pointer;
 }
 
 h2 {
@@ -47,13 +58,13 @@ h2 {
 #btc {
     max-width: 50px;
     max-height: 50px;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 #btc:hover {
     max-width: 55px;
     max-height: 55px;
-    padding-right: 5px;
+    padding-right: 15px;
 }
 
 /* //==================================================
@@ -69,16 +80,25 @@ h2 {
     align-items: center;
     background: rgb(0, 97, 109, 1);
     height: 100px;
-    width: 220px;
+    width: 0px;
     top: 100px;
     left: 0;
-    padding: 25px;
+    opacity: 0;
+}
+
+.active {
+    width: 200px;
+
 }
 
 h3 {
     font-size: 14px;
     font-weight: 100;
     padding: 5px;
+}
+
+p {
+    opacity: 0;
 }
 
 
@@ -88,6 +108,7 @@ h3 {
     display: inline-block;
     width: 60px;
     height: 34px;
+    opacity: 0;
   }
   
   /* Hide default HTML checkbox */

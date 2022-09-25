@@ -185,10 +185,11 @@ const score = () => {
   }
 };
 
-expandSettingsMenu = () => {
+hashMenu.addEventListener("click", () => {
     menu.classList.toggle('active')
-}
+    soundToggle.classList.toggle('active')
 
+})
 
 
 
@@ -205,10 +206,9 @@ expandSettingsMenu = () => {
 
 bitcoin.addEventListener("click", () => {
   coin.play();
+  document.body.classList.toggle('bitcoinization')
 
 })
-
-// so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.
 
 // hyperBitcoinization.addEventListener('click', (event) => {
 //     if (event.target) {
