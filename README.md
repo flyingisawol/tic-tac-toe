@@ -11,18 +11,20 @@ Play game now from: https://flyingisawol.github.io/tic-tac-toe/
 - CSS
 - HTML
 
-——————————————————————————————————————————————————————————————————
+-----
 ## The Planning Process:
 I began by sketching a wireframe for the app (below) and from there began coding to move toward a working game.
 
 ![wireframe iamge] (img/wireframe.jpg)
 
-——————————————————————————————————————————————————————————————————
+-----
+
 Credits:
 Dido & Rod @ G.A (& many class mates. 🙏)
 & thanks to Blake Jarryd whose styling i like, and subsequently copied. (although my code is far more primitive.)
 
-——————————————————————————————————————————————————————————————————
+-----
+
 
 <!-- readme tutorial -->
 <!-- https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/  -->
