@@ -192,7 +192,8 @@ main {
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(249, 126, 17);
-    font-size: 105px;
+    font-size: 145px;
+    font-weight: 700;
     padding: 25px;
 }
 
@@ -412,7 +413,7 @@ footer {
         justify-content: center;
         align-items: center;
         border: 2px solid rgb(249, 126, 17);
-        font-size: 45px;
+        font-size: 75px;
     }
 
     /* //==================================================

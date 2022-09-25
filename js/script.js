@@ -55,21 +55,19 @@ const winningCombinations = [
 board.addEventListener("click", (event) => {
   const num = Number(event.target.dataset.index);
   if (event.target.textContent) {
-    // cantTouchThis.play()
+    cantTouchThis.play()
     alert("choose a different square");
   } else if (currentPlayer === "X") {
     event.target.textContent = "X";
     currentPlayer = "O";
     p1.push(num);
     arr.push(num);
-    // console.log(arr);
     checkForWinner();
   } else if (currentPlayer !== "X") {
     event.target.textContent = "O";
     currentPlayer = "X";
     p2.push(num);
     arr.push(num);
-    // console.log(arr);
     checkForWinner();
   }
 });
@@ -121,7 +119,7 @@ const endGame = () => {
 
 // FUNCTION TO INITIALISE GAME
 const initGame = () => {
-//   replaySound.play()
+  replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;
@@ -141,7 +139,7 @@ const initGame = () => {
 
 // RESET BUTTON LISTENER
 restartButton.addEventListener("click", () => {
-//   replaySound.play()
+  replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;
@@ -161,7 +159,7 @@ restartButton.addEventListener("click", () => {
 
 // SPLASH SCREEN 
 const splashOn = () => {
-    // endSound.play()
+    endSound.play()
     winningMessageOverlay.style.zIndex = 1;
     winningMessageOverlay.style.opacity = 0.8;
     winningText.style.zIndex = 2;
@@ -185,12 +183,19 @@ const score = () => {
   }
 };
 
+// Listener to enable toggling menu on/off (currently disabled)
 hashMenu.addEventListener("click", () => {
     menu.classList.toggle('active')
     soundToggle.classList.toggle('active')
 
 })
 
+// bitcoin button changes theme
+bitcoin.addEventListener("click", () => {
+  coin.play();
+  document.body.classList.toggle('bitcoinization')
+
+})
 
 
 // TOGGLE SOUND 
@@ -204,11 +209,6 @@ hashMenu.addEventListener("click", () => {
 //     el.pause()
 // }
 
-bitcoin.addEventListener("click", () => {
-  coin.play();
-  document.body.classList.toggle('bitcoinization')
-
-})
 
 // hyperBitcoinization.addEventListener('click', (event) => {
 //     if (event.target) {
