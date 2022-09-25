@@ -16,7 +16,7 @@ body {
 
 .bitcoinization {
     background: white;
-    background-image: url("/img/IMG_6593.JPG");
+    background-image: url("/images/IMG_6593.JPG");
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@ h2 {
 }
 
 /* //==================================================
-//Menu Drop Down
+//Menu Drop Down (disabled)
 //================================================== */
 
 .menu {

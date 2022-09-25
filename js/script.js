@@ -183,19 +183,19 @@ const score = () => {
   }
 };
 
-// Listener to enable toggling menu on/off (currently disabled)
-hashMenu.addEventListener("click", () => {
-    menu.classList.toggle('active')
-    soundToggle.classList.toggle('active')
-
-})
-
 // bitcoin button changes theme
 bitcoin.addEventListener("click", () => {
   coin.play();
   document.body.classList.toggle('bitcoinization')
 
 })
+
+// Listener to enable toggling menu on/off (currently disabled)
+hashMenu.addEventListener("click", () => {
+    menu.classList.toggle('active')
+    soundToggle.classList.toggle('active')
+})
+
 
 
 // TOGGLE SOUND 
