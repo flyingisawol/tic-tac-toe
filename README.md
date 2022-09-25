@@ -4,7 +4,8 @@
 
 Play game now from: https://flyingisawol.github.io/tic-tac-toe/
 
-— — — — —
+-----
+
 ### Technologies Used:
 - Javascript
 - CSS
