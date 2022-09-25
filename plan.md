@@ -27,11 +27,13 @@ complete:
 - loop for clearing board. done
 - optimise for mobile. done
 - splash screen adjusted for draws. done
+- update the players score. done
 
 
 Incomplete:
-- update the players score
-- finalise README
+- fix bug re draw showing when winning on last square.
 - mute button added
+- finalise README
 - static reset button
+
 - hyperbitcoinization mode (click button. Change O's to img)

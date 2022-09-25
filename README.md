@@ -1,20 +1,27 @@
-Tic Tac Toe
+### Tic Tac Toe
 
-Description:
+ The classic game buit in a front-end web app.
 
-Game available from: https://flyingisawol.github.io/tic-tac-toe/
+Play game now from: https://flyingisawol.github.io/tic-tac-toe/
 
+——————————————————————————————————————————————————————————————————
+### Technologies Used:
+- Javascript
+- CSS
+- HTML
 
+——————————————————————————————————————————————————————————————————
+## The Planning Process:
+I began by sketching a wireframe for the app (below) and from there began coding to move toward a working game.
 
-Table of Contents:
+![wireframe iamge] (img/wireframe.jpg)
 
-How to Install and Run the Project:
+——————————————————————————————————————————————————————————————————
+Credits:
+Dido & Rod @ G.A (& many class mates. 🙏)
+& thanks to Blake Jarryd whose styling i like, and subsequently copied. (although my code is far more primitive.)
 
-How to Use the Project:
-
-Include Credits:
-
-Add a License:
+——————————————————————————————————————————————————————————————————
 
 <!-- readme tutorial -->
 <!-- https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/  -->

@@ -21,6 +21,16 @@ const endSound = new Audio("audio/restart.mp3");
 const coin = new Audio("audio/coin.mp3");
 const score1 = document.querySelector(".score1");
 const score2 = document.querySelector(".score2");
+const soundToggle = document.querySelector(".switch");
+const hashMenu = document.querySelector(".logo-image");
+const menu = document.querySelector(".menu")
+
+const soundArray = [
+    cantTouchThis, 
+    replaySound,
+    endSound,
+    coin,
+];
 
 const hyperBitcoinization = document.querySelector(".btc-mode");
 const bitcoin = document.querySelector("#btc");
@@ -87,7 +97,7 @@ const checkForWinner = () => {
 
 // CHECK FOR A DRAW
 const drawCheck = () => {
-  if (arr.length === 9 && winningCombinations !== true) {
+  if (checkForWinner !== true && arr.length === 9) {
     endGame();
   }
 };
@@ -96,43 +106,22 @@ const drawCheck = () => {
 const endGame = () => {
   if (arr.length === 9) {
     currentPlayer = `It's a draw!`
-    endSound.play()
     winningText.innerHTML = `${currentPlayer}`;
-    winningMessageOverlay.style.zIndex = 1;
-    winningMessageOverlay.style.opacity = 0.8;
-    winningText.style.zIndex = 2;
-    winningText.style.opacity = 1;
-    restartButton.style.opacity = 1;
-    restartButton.style.zIndex = 2;
-    endGameOverlay.style.zIndex = 0;
+    splashOn()
   } else if (currentPlayer === "X") {
     currentPlayer = "O";
-    endSound.play()
     winningText.innerHTML = `${currentPlayer}'s Win!`;
-    winningMessageOverlay.style.zIndex = 1;
-    winningMessageOverlay.style.opacity = 0.8;
-    winningText.style.zIndex = 2;
-    winningText.style.opacity = 1;
-    restartButton.style.opacity = 1;
-    restartButton.style.zIndex = 2;
-    endGameOverlay.style.zIndex = 0;
+    splashOn()
   } else if (currentPlayer === "O") {
     currentPlayer = "X";
-    endSound.play()
     winningText.innerHTML = `${currentPlayer}'s Win!`;
-    winningMessageOverlay.style.zIndex = 1;
-    winningMessageOverlay.style.opacity = 0.8;
-    winningText.style.zIndex = 2;
-    winningText.style.opacity = 1;
-    restartButton.style.opacity = 1;
-    restartButton.style.zIndex = 2;
-    endGameOverlay.style.zIndex = 0;
+    splashOn()
   }
 };
 
-// Function to initialise game
+// FUNCTION TO INITIALISE GAME
 const initGame = () => {
-  replaySound.play()
+//   replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;
@@ -150,9 +139,9 @@ const initGame = () => {
   arr = [];
 };
 
-// Reset Button - Play Again!
+// RESET BUTTON LISTENER
 restartButton.addEventListener("click", () => {
-  replaySound.play()
+//   replaySound.play()
   winningMessageOverlay.style.zIndex = -1;
   winningMessageOverlay.style.opacity = 0;
   winningText.style.zIndex = -1;
@@ -170,8 +159,19 @@ restartButton.addEventListener("click", () => {
   arr = [];
 });
 
-// Score Keeper
+// SPLASH SCREEN 
+const splashOn = () => {
+    // endSound.play()
+    winningMessageOverlay.style.zIndex = 1;
+    winningMessageOverlay.style.opacity = 0.8;
+    winningText.style.zIndex = 2;
+    winningText.style.opacity = 1;
+    restartButton.style.opacity = 1;
+    restartButton.style.zIndex = 2;
+    endGameOverlay.style.zIndex = 0;
+}
 
+// SCORE KEEPER
 const score = () => {
   if (currentPlayer !== "X") {
     p1Score = p1Score + 1;
@@ -185,9 +185,28 @@ const score = () => {
   }
 };
 
+expandSettingsMenu = () => {
+    menu.classList.toggle('active')
+}
+
+
+
+
+// TOGGLE SOUND 
+// const mute = soundToggle.addEventListener("click", () => {
+//     muteElem()
+// })
+    
+// const muteElem = document.querySelectorALL("video, audio")
+// for (const el of soundArray) {
+//     el.muted = true
+//     el.pause()
+// }
+
 bitcoin.addEventListener("click", () => {
   coin.play();
-});
+
+})
 
 // so now. need to add to checkForWinner function so that when someone wins, splash screen is displayed.
 
