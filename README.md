@@ -21,7 +21,7 @@ I began by sketching a wireframe for the app (below) and from there began coding
 
 Credits:
 Dido & Rod @ G.A (& many class mates. 🙏)
-& thanks to Blake Jarryd whose styling i like, and subsequently copied. (although my code is far more primitive.)
+& thanks to Blake Jarryd whose styling i liked, and subsequently copied. (although my code is far more primitive.)
 
 -----
 
