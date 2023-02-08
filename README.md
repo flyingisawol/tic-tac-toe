@@ -1,6 +1,6 @@
 ### Tic Tac Toe
 
- The classic game buit in a front-end web app.
+ The classic game built in a front-end web app.
 
 Play game now from: https://flyingisawol.github.io/tic-tac-toe/
 
